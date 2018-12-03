@@ -16,10 +16,18 @@
     font-family: 'Caveat', cursive;
 }
 
+#p02 {
+    font-size: 110%;
+    text-align: center;
+}
+
 .jumbotron {
     opacity: 0.9;
-    height: 650px;
 }
 hr {
     display: block;
+}
+
+@media screen and (max-width) {
+    
 }
