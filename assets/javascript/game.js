@@ -4,7 +4,7 @@ var wins = 0;
 var losses = 0;
 var correctGuess = false;
 
-
+ 
 var wins = document.getElementById("wins");
 var losses = document.getElementById("losses");
 var guessesLeft = document.getElementById("guesses-left");
@@ -17,7 +17,6 @@ document.onkeyup = function(event) {
 computerLetters[Math.floor(Math.random() * computerLetters.length)];
 }
 
-userGuess.onkeyup
 
 // if ((userGuess === "") || (userGuess === "") || (userGuess === "")) {
 

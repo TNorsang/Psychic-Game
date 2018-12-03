@@ -28,6 +28,38 @@ hr {
     display: block;
 }
 
-@media screen and (max-width) {
-    
+.form-control-custom {
+    margin-left: 260px;
+    width: 16%;
+}
+
+@media screen and (max-width:1200px) {
+    #user-text {
+        font-size: 73%;
+    }
+    .form-control-custom {
+        margin-left: 200px;
+        width: 20%;
+    }
+}
+
+@media screen and (max-width:992px) {
+    #user-text {
+        font-size: 88%;
+    }
+    .form-control-custom {
+        margin-left: 250px;
+        width: 20%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    #user-text {
+        font-size: 139%;
+        margin-left: 76px;
+    }
+    .form-control-custom {
+        margin-left: 270px;
+        width: 20%;
+    }
 }
