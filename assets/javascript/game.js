@@ -1,7 +1,7 @@
 var letters='abcdefghijklmnopqrstuvwxyz';
 var computerLetters=letters.split('');
-var wins = 0;
-var losses = 0;
+var winScore = 0;
+var lossScore = 0;
 var correctGuess = false;
 
  
@@ -10,11 +10,17 @@ var losses = document.getElementById("losses");
 var guessesLeft = document.getElementById("guesses-left");
 var guessesSoFar = document.getElementById("guesses-so-far");
 
-// for (i=0; i<10;)
+
+// for (var i = 0; i < 10; i = i + 1) {
+
+// }
+
 
 document.onkeyup = function(event) {
-    var userGuess = event.key;
-computerLetters[Math.floor(Math.random() * computerLetters.length)];
+    var userGuess = event.key; 
+    var computerGuess = Math.floor(Math.random() * (computerLetters.length - 1));
+    var randomLetter = computerLetters[computerGuess];
+    console.log (userGuess);
 }
 
 

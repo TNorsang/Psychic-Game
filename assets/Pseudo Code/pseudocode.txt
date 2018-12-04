@@ -1,0 +1,9 @@
+1) Press a key on keyboard inside the box to guess a letter
+3) Display the letter you chose on the "guess so far"
+4) Will show if the guess is right or wrong.
+5) The guesses left will go down by 1 if you got it wrong.
+6) If the guess is right you will get 1 win.
+7) The score will reset after a win or 10 losses in a row.
+8) You will get a loss if the whole 10 guesses are used. 
+
+use document.getElementId to get my input box and get the value from there. 
