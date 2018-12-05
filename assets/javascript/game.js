@@ -9,26 +9,43 @@ var losses = 0;
 var guessesLeft = 10;
 var guessedLetters = [];
 
+// A random guess generator
 var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+// var computerGuess = "h";
 
+
+// Displaying the wins/losses/guessesleft on DOM
+document.getElementById("wins").innerHTML = wins;
+document.getElementById("losses").innerHTML = losses;
+document.getElementById("guesses-left").innerHTML = guessesLeft;
+
+
+// A function for keys being pressed
 document.onkeyup = function (event) {
-    
+
     var guessedLetters = event.key;
     console.log(guessedLetters);
-};
+    document.getElementById("guesses-so-far").innerHTML = guessedLetters;
 
-if(guessedLetters === computerChoices) {
-    wins++;
-    alert("You Win!");
-}
+    var reset = function() {
+        guessesLeft = 10;
+        guessedLetters = [];
+        computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+        console.log (computerGuess);
+    };
+    
 
-var guessesLeftScore = function () {
+    if(guessedLetters === computerGuess) {
+        wins ++;
+        alert("You Win!");
+    }
+    if (guessedLetters != computerGuess) {
+        losses --;
 
-    document.getElementById("guesses-left").innerHTML = (guessesLeft);
+    }
     
 };
 
-guessesLeftScore();
 
 
 
@@ -36,11 +53,5 @@ guessesLeftScore();
 
 
 
-
-var reset = function() {
-	guessesLeft = 10;
-	guessedLetters = [];
-	var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-};
 
 
