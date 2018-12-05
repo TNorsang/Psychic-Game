@@ -1,38 +1,46 @@
+// Alphabet letters
 var letters='abcdefghijklmnopqrstuvwxyz';
-var computerLetters=letters.split('');
-var winScore = 0;
-var lossScore = 0;
-var correctGuess = false;
+// splitting the variables into array
+var computerChoices=letters.split('');
 
- 
-var wins = document.getElementById("wins");
-var losses = document.getElementById("losses");
-var guessesLeft = document.getElementById("guesses-left");
-var guessesSoFar = document.getElementById("guesses-so-far");
+// Creating Global Variables for the game
+var wins = 0;
+var losses = 0;
+var guessesLeft = 10;
+var guessedLetters = [];
 
+var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
-// for (var i = 0; i < 10; i = i + 1) {
+document.onkeyup = function (event) {
+    
+    var guessedLetters = event.key;
+    console.log(guessedLetters);
+};
 
-// }
-
-
-document.onkeyup = function(event) {
-    var userGuess = event.key; 
-    var computerGuess = Math.floor(Math.random() * (computerLetters.length - 1));
-    var randomLetter = computerLetters[computerGuess];
-    console.log (userGuess);
+if(guessedLetters === computerChoices) {
+    wins++;
+    alert("You Win!");
 }
 
+var guessesLeftScore = function () {
 
-// if ((userGuess === "") || (userGuess === "") || (userGuess === "")) {
+    document.getElementById("guesses-left").innerHTML = (guessesLeft);
+    
+};
 
-//     if ((userGuess === "" && computerGuess === "") ||
-//       (userGuess === "" && computerGuess === "") || 
-//       (userGuess === "" && computerGuess === "")) {
-//       wins++;
-//     } else if (userGuess === computerGuess) {
-//       ties++;
-//     } else {
-//       losses++;
-//     }
+guessesLeftScore();
+
+
+
+
+
+
+
+
+var reset = function() {
+	guessesLeft = 10;
+	guessedLetters = [];
+	var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+};
+
 
