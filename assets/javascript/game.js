@@ -26,7 +26,6 @@ document.onkeyup = function (event) {
 
     var guessedLetters = event.key.toLowerCase();
     console.log(guessedLetters);
-
     document.getElementById("guesses-so-far").innerHTML = guessedLetters;
 
     var reset = function () {
