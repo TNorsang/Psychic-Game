@@ -1,7 +1,7 @@
 // Alphabet letters
-var letters='abcdefghijklmnopqrstuvwxyz';
+var letters = 'abcdefghijklmnopqrstuvwxyz';
 // splitting the variables into array
-var computerChoices=letters.split('');
+var computerChoices = letters.split('');
 
 // Creating Global Variables for the game
 var wins = 0;
@@ -23,27 +23,35 @@ document.getElementById("guesses-left").innerHTML = guessesLeft;
 // A function for keys being pressed
 document.onkeyup = function (event) {
 
-    var guessedLetters = event.key;
+    var guessedLetters = event.key.toLowerCase();
     console.log(guessedLetters);
+
     document.getElementById("guesses-so-far").innerHTML = guessedLetters;
 
-    var reset = function() {
-        guessesLeft = 10;
+    var reset = function () {
+        guessesLeft = 11;
         guessedLetters = [];
         computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-        console.log (computerGuess);
-    };
-    
+        console.log(computerGuess);
+    }
 
-    if(guessedLetters === computerGuess) {
-        wins ++;
+
+    if (guessedLetters === computerGuess) {
+        wins++;
+        document.getElementById("wins").innerHTML = wins;
         alert("You Win!");
+        reset();
     }
-    if (guessedLetters != computerGuess) {
-        losses --;
+    else {
+        guessesLeft--;
+        document.getElementById("guesses-left").innerHTML = guessesLeft;
+    }
+    if (guessesLeft == 0) {
+        losses++;
+        document.getElementById("losses").innerHTML = losses;
+        reset();
+    }
 
-    }
-    
 };
 
 
