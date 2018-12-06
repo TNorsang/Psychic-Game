@@ -8,7 +8,8 @@ var wins = 0;
 var losses = 0;
 var guessesLeft = 10;
 var guessedLetters = [];
-
+var winSound = new Audio("assets/audio/win.mp3");
+var lossSound = new Audio("assets/audio/loss.mp3");
 // A random guess generator
 var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 // var computerGuess = "h";
@@ -39,6 +40,7 @@ document.onkeyup = function (event) {
     if (guessedLetters === computerGuess) {
         wins++;
         document.getElementById("wins").innerHTML = wins;
+        winSound.play();
         alert("You Win!");
         reset();
     }
@@ -49,6 +51,8 @@ document.onkeyup = function (event) {
     if (guessesLeft == 0) {
         losses++;
         document.getElementById("losses").innerHTML = losses;
+        lossSound.play();
+        alert("You Lost :( Try Again!")
         reset();
     }
 
