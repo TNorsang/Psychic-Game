@@ -36,6 +36,16 @@ document.onkeyup = function (event) {
         console.log(computerGuess);
     }
 
+    var resetGame = function () {
+        wins = 0;
+        losses = 0;
+        guessesLeft = 11;
+        guessedLetters = [];
+        computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+        console.log(computerGuess);
+
+    }
+
 
     if (guessedLetters === computerGuess) {
         wins++;
