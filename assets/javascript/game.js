@@ -30,19 +30,18 @@ document.onkeyup = function (event) {
     console.log(guessedLetters);
 
     var reset = function () {
-        guessesLeft = 11;
         guessedLetters = [];
+        guessesLeft = 11;
         computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
         console.log(computerGuess);
     }
 
-
-    if (guessedLetters === computerGuess) {
+    if (userGuess === computerGuess) {
         wins++;
         document.getElementById("wins").innerHTML = wins;
         winSound.play();
-        alert("You Win!");
         reset();
+        alert("You Win!");
     }
     else {
         guessesLeft--;
@@ -52,8 +51,8 @@ document.onkeyup = function (event) {
         losses++;
         document.getElementById("losses").innerHTML = losses;
         lossSound.play();
-        alert("You Lost :( Try Again!")
         reset();
+        alert("You Lost :( Try Again!")
     }
 
 };
