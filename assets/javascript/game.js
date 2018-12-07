@@ -22,6 +22,8 @@ document.getElementById("guesses-left").innerHTML = guessesLeft;
 
 
 // A function for keys being pressed
+
+
 document.onkeyup = function (event) {
 
     var userGuess = event.key.toLowerCase();
